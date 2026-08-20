@@ -20,7 +20,9 @@ def monitor_following_distance(distances: list[float], speeds: list[float]) -> t
         minimum_distance = 0.0
     else:
         minimum_distance = min(distances)
-    for distance, speed in zip(distances, speeds):
+    for i in range(len(distances)):
+        distance = distances[i]
+        speed = speeds[i]
         safe_distance = speed * 0.5
         if distance < safe_distance:
             tailgating_seconds += 1
